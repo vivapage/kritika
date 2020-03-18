@@ -1,0 +1,90 @@
+.sticky {
+  display: block;
+}
+
+.post,
+.page {
+  margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+#primary {
+  float: left;
+  padding: 0;
+
+  @include breakpoint(bg) {
+    width: 990px;
+  }
+  @include breakpoint(lg) {
+    width: 690px;
+  }
+  @include breakpoint(md) {
+    width: 690px;
+  }
+  @include breakpoint(sm) {
+    width: 390px;
+  }
+  @include breakpoint(xs) {
+    width: 94%;
+    @include font-size(0.9);
+    float: none;
+    margin: auto;
+  }
+}
+
+.site-content,
+.site-info,
+.site-branding,
+#primary-menu {
+  @include center-block;
+  @include breakpoint(bg) {
+    width: 1320px;
+  }
+  @include breakpoint(lg) {
+    width: 1170px;
+  }
+  @include breakpoint(md) {
+    width: 1010px;
+  }
+  @include breakpoint(sm) {
+    width: 758px;
+  }
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+}
+
+#secondary {
+  margin: 0 0 10px 10px;
+  float: left;
+  @include breakpoint(bg) {
+    width: 300px;
+  }
+  @include breakpoint(lg) {
+    width: 300px;
+  }
+  @include breakpoint(md) {
+    width: 300px;
+  }
+  @include breakpoint(sm) {
+    width: 300px;
+  }
+  @include breakpoint(xs) {
+    width: 94%;
+    @include font-size(0.9);
+  }
+}
