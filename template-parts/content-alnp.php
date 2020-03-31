@@ -20,7 +20,7 @@ if ( have_posts() ) :
 		do_action( 'alnp_load_before_content' );
 
 		// Load 'loop-templates/content-single.php'
-		get_template_part( alnp_template_location() . 'content', 'single' );
+		get_template_part( alnp_template_location() . 'content' );
 
 		// Load content after the post content.
 		do_action( 'alnp_load_after_content' );

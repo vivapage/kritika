@@ -4,7 +4,8 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
@@ -30,4 +31,86 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+h1.entry-title {
+	margin: 0;
+	color: #333;
+	font: 700 32px/34px helvetica, arial, sans-serif;
+	padding: 20px 0 0 20px;
+}
+
+h6.widget-title {
+	font-size: 14px;
+	line-height: 14px;
+	font-family: "Arial Black", Gadget, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+}
+.widget-title {
+	color: #282828;
+	text-shadow: 0 1px 1px #fff;
+	background-color: #ececec;
+	text-shadow: 0 1px 1px #fff;
+	border-bottom: 1px solid #dedede;
+	border-top: 1px solid #dedede;
+	min-height: 14px;
+	padding: 11px 0;
+	margin-left: 0;
+	position: relative;
+	width: 100%;
+}
+
+#wpc-weather .hours .first {
+	margin: 0 1%;
+}
+
+#wpc-weather {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	line-height: 20px;
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.footer-nav-list {
+	margin: 0;
+	padding: 0;
+	display: table-cell;
+}
+
+.footer-nav-list li {
+	float: left;
+}
+.footer-nav a {
+	text-decoration: none;
+}
+
+ul#footer-menu.footer-nav-list {
+	list-style: none;
+}
+
+.footer-nav-span {
+	margin-left: 0;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	padding: 0 13px;
+	position: relative;
+	text-align: center;
+	white-space: nowrap;
+	color: #000;
+	font-family: "Arial", Gadget, sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-shadow: none;
+	text-transform: uppercase;
+	z-index: 9005;
+}
+
 @import "tables";
+
+@import "blocks";

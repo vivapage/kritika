@@ -18,8 +18,8 @@ var gulp = require("gulp"),
 gulp.task("browser-sync", function() {
 	browsersync({
 		proxy: "http://www.kritika.localhost/",
-		notify: false,
-		open: true
+		notify: false
+		//open: true
 		// tunnel: true,
 		// tunnel: "gulp-wp-fast-start", //Demonstration page: http://gulp-wp-fast-start.localtunnel.me
 	});
@@ -27,18 +27,17 @@ gulp.task("browser-sync", function() {
 
 // Обьединяем файлы sass, сжимаем и переменовываем
 gulp.task("styles", function() {
-	return (
-		gulp
-			.src("./sass/**/*.scss")
-			.pipe(sass({ outputStyle: "expand" }).on("error", notify.onError()))
-			//.pipe(rename({ suffix: '.min', prefix : '' }))
-			.pipe(concat("style.css"))
+	return gulp
+		.src("./sass/**/*.scss")
+		.pipe(sass({ outputStyle: "expand" }).on("error", notify.onError()))
+		.pipe(rename({ suffix: ".min", prefix: "" }))
+		.pipe(concat("style.css"))
 
-			.pipe(autoprefixer(["last 15 versions"]))
-			.pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
-			.pipe(gulp.dest("./"))
-			.pipe(browsersync.stream())
-	);
+		.pipe(autoprefixer(["last 15 versions"]))
+		.pipe(cleancss({ level: { 1: { specialComments: 2 } } })) // Opt., comment out when debugging
+		.pipe(gulp.dest("./"))
+
+		.pipe(browsersync.stream());
 });
 
 // Обьединяем файлы скриптов, сжимаем и переменовываем

@@ -18,20 +18,27 @@ if ( ! function_exists( 'kritika_posted_on' ) ) :
 		}
 
 		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date('Y-m-d H:i') ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date('Y-m-d H:i') )
 		);
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'kritika' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( '%s', 'post date', 'kritika' ),
+			'<span class="meta-timesince-span-post">Опубликовано: ' . $time_string . '</span>'
+		);
+/*
+		$byline = sprintf(
+
+			esc_html_x( 'by %s', 'post author', 'kritika' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+*/
+		echo '<span class="posted-on">' . $posted_on . '</span>';
 	}
 endif;
 
@@ -62,18 +69,19 @@ if ( ! function_exists( 'kritika_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'kritika' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'kritika' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'kritika' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'kritika' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Опубліковано в %1$s', 'kritika' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
+	}
+endif;
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+if ( ! function_exists( 'kritika_entry_comments' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function kritika_entry_comments() {
+
+		if ( is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
 				sprintf(
@@ -91,23 +99,6 @@ if ( ! function_exists( 'kritika_entry_footer' ) ) :
 			);
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'kritika' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
 
@@ -125,22 +116,27 @@ if ( ! function_exists( 'kritika_post_thumbnail' ) ) :
 
 		if ( is_singular() ) :
 			?>
-
+		
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php //the_post_thumbnail(); ?>
+		
+		
+		
+					<a href="<?php the_post_thumbnail_url(); ?>" data-lightbox="image-1" data-title="<?php the_title();?>"><?php the_post_thumbnail('section-list'); ?></a>
 			</div><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
+		
+		
+			<?php else : ?>
+		
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php
+					the_post_thumbnail( 'post-thumbnail', array(
+						'alt' => the_title_attribute( array(
+							'echo' => false,
+						) ),
+					) );
+				?>
+			</a>
 
 		<?php
 		endif; // End is_singular().

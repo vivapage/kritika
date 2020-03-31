@@ -10,7 +10,7 @@
  */
 
 ?>
-
+</div>
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
@@ -47,6 +47,15 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('.content, .sidebar').theiaStickySidebar({
+      // Settings
+      additionalMarginTop: 30
+    });
+  });
+</script>
 
 </body>
 </html>

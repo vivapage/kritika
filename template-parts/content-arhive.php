@@ -106,52 +106,6 @@ if ($category){
 		endif;
 		?>
 
-<div class="more-stories-wrap thumbnails">
-			<div class="more-header">
-				<span class="more-header-span">ПОПУЛЯРНОЕ</span>
-			</div>
-			<div class="more-outer">
-				<div class="more-div">
-
-
-			<?php
-
-				$args = array(
-                	'numberposts' => 4,
-                	'meta_key'    => 'post_views_count',
-                	'orderby'     => 'meta_value_num',
-                	'post_status' => 'publish',
-                	'order'       => 'DESC'
-                );
-
-			$result = wp_get_recent_posts($args);
-
-			foreach( $result as $p ){
-			?>
-				<div class="morecube">
-					<a href="<?php echo get_permalink($p['ID']) ?>">
-					<div class="thumbBlock_holder">
-						<span class="thumbBlock" style="background-image: url(&quot;<?php echo  get_the_post_thumbnail_url($p["ID"],'category-big'); ?>&quot;);"><span class="thumbnail-overlay"></span></span>
-						<div class="morecube_aspect"></div>
-					</div></a>
-					<a href="<?php echo get_permalink($p['ID']) ?>">
-						<span class="label-box">
-							<span class="label-title">
-								<?php echo $p['post_title'] ?>
-							</span>
-
-							<span class="label-date"><?php echo date('Y-m-d H:i', strtotime($p['post_date']))?></span>
-						</span>
-					</a>
-				</div>
-			<?php
-			}
-			?>
-				</div>
-			</div>
-		</div>
-
-
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

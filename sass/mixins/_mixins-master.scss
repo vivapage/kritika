@@ -1,31 +1,32 @@
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
-  font-size: ($sizeValue * 16) * 1px;
-  font-size: $sizeValue * 1rem;
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
 }
 
 // Center block
 @mixin center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // Clearfix
 @mixin clearfix() {
-  content: "";
-  display: table;
-  table-layout: fixed;
+	content: "";
+	display: table;
+	table-layout: fixed;
 }
 
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
-  clear: both;
+	clear: both;
 }
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-  width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns);
+	width: map-get($columns, $numberColumns) -
+		(($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
 /*********************
@@ -33,25 +34,25 @@ BREAKPOINTS
 *********************/
 
 @mixin breakpoint($point) {
-  @if $point == bg {
-    @media all and (min-width: 1366px) {
-      @content;
-    }
-  } @else if $point == lg {
-    @media all and (min-width: 1280px) and (max-width: 1365px) {
-      @content;
-    }
-  } @else if $point == md {
-    @media all and (min-width: 1024px) and (max-width: 1279px) {
-      @content;
-    }
-  } @else if $point == sm {
-    @media all and (min-width: 768px) and (max-width: 1023px) {
-      @content;
-    }
-  } @else if $point == xs {
-    @media (max-width: 768px) {
-      @content;
-    }
-  }
+	@if $point == bg {
+		@media all and (min-width: 1366px) {
+			@content;
+		}
+	} @else if $point == lg {
+		@media all and (min-width: 1280px) and (max-width: 1365px) {
+			@content;
+		}
+	} @else if $point == md {
+		@media all and (min-width: 1024px) and (max-width: 1279px) {
+			@content;
+		}
+	} @else if $point == sm {
+		@media all and (min-width: 768px) and (max-width: 1023px) {
+			@content;
+		}
+	} @else if $point == xs {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
 }
