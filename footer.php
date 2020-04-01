@@ -29,16 +29,16 @@
 					) );
 				?>
 					<div class="site-footer-content">
-						<div class="site-footer-widget">
+						<div class="site-footer-widget col-20">
 							<?php dynamic_sidebar( 'footer-1' ); ?>
 						</div>
-						<div class="site-footer-widget">
+						<div class="site-footer-widget col-60">
 							<?php dynamic_sidebar( 'footer-2' ); ?>
 							<p>
-								&copy; <?php echo date('Y'); ?> All Rights Reserved
+								&copy; <?php echo date('Y'); ?> КРИТИКА - новости Украины и мира. Все права защищены.
 							</p>
 						</div>
-						<div class="site-footer-widget">
+						<div class="site-footer-widget col-20">
 							<?php dynamic_sidebar( 'footer-3' ); ?>
 						</div>
 					</div>

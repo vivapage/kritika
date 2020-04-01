@@ -51,7 +51,7 @@ if ( ! function_exists( 'kritika_setup' ) ) :
 		add_image_size( 'section-list-small', 90, 68, true );
 		add_image_size( 'section-popular', 210, 157, true );
 		add_image_size( 'category-big', 483, 405, true );
-		add_image_size( 'category-small', 236, 202, true );
+		add_image_size( 'category-small', 250, 230, true );
 		
 
 		// This theme uses wp_nav_menu() in one location.

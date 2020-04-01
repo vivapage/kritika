@@ -187,7 +187,7 @@ echo '</ul>';
 											 echo  get_the_post_thumbnail($recent["ID"],'section-list-small');
 										}
 									echo '</div>';
-				 				 echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 10, '...' ) . '</span>';
+				 				 echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 8, '...' ) . '</span>';
 								 echo '<span class="section-list-hed-meta">' . $recent["post_date"] . '</span>';
 								} else {
 									echo '<li class="item-'. $key . '"><a class="section-list-item-noim" href="' . get_permalink($recent["ID"]) .'">';
@@ -233,7 +233,7 @@ echo '</ul>';
 										 echo  get_the_post_thumbnail($recent["ID"],'section-list-small');
 									}
 								echo '</div>';
-								echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 10, '...' ) . '</span>';
+								echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 8, '...' ) . '</span>';
 							 echo '<span class="section-list-hed-meta">' . $recent["post_date"] . '</span>';
 							} else {
 								echo '<li class="item-'. $key . '"><a class="section-list-item-noim" href="' . get_permalink($recent["ID"]) .'">';
@@ -279,7 +279,7 @@ echo '</ul>';
 											 echo  get_the_post_thumbnail($recent["ID"],'section-list-small');
 										}
 									echo '</div>';
-									echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 10, '...' ) . '</span>';
+									echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 8, '...' ) . '</span>';
 								 echo '<span class="section-list-hed-meta">' . $recent["post_date"] . '</span>';
 								} else {
 									echo '<li class="item-'. $key . '"><a class="section-list-item-noim" href="' . get_permalink($recent["ID"]) .'">';
@@ -325,7 +325,7 @@ echo '</ul>';
 										 echo  get_the_post_thumbnail($recent["ID"],'section-list-small');
 									}
 								echo '</div>';
-								echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 10, '...' ) . '</span>';
+								echo '<span class="section-list-hed">' . wp_trim_words( $recent["post_title"], 8, '...' ) . '</span>';
 							 echo '<span class="section-list-hed-meta">' . $recent["post_date"] . '</span>';
 							} else {
 								echo '<li class="item-'. $key . '"><a class="section-list-item-noim" href="' . get_permalink($recent["ID"]) .'">';

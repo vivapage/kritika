@@ -41,10 +41,10 @@
 		width: 962px;
 	}
 	@include breakpoint(lg) {
-		width: 690px;
+		width: 962px;
 	}
 	@include breakpoint(md) {
-		width: 690px;
+		width: 810px;
 	}
 	@include breakpoint(sm) {
 		width: 390px;
@@ -59,16 +59,44 @@
 
 .primary-module {
 	float: left;
-	width: 720px;
 	border-bottom: 1px solid #dedede;
+	@include breakpoint(bg) {
+		width: 720px;
+	}
+	@include breakpoint(lg) {
+		width: 720px;
+	}
+	@include breakpoint(md) {
+		width: 588px;
+	}
+	@include breakpoint(sm) {
+		width: 588px;
+	}
+	@include breakpoint(xs) {
+		width: 100%;
+	}
 }
 
 .secondary-module {
 	float: right;
-	width: 241px;
 	border-left: 1px solid #e0e0e0;
 	border-left: 1px solid #e0e0e0;
 	display: block;
+	@include breakpoint(bg) {
+		width: 241px;
+	}
+	@include breakpoint(lg) {
+		width: 241px;
+	}
+	@include breakpoint(md) {
+		width: 221px;
+	}
+	@include breakpoint(sm) {
+		width: 221px;
+	}
+	@include breakpoint(xs) {
+		width: 100%;
+	}
 }
 
 .site-content,
@@ -81,10 +109,10 @@
 		width: 1320px;
 	}
 	@include breakpoint(lg) {
-		width: 1170px;
+		width: 1262px;
 	}
 	@include breakpoint(md) {
-		width: 1010px;
+		width: 1110px;
 	}
 	@include breakpoint(sm) {
 		width: 758px;
@@ -99,6 +127,7 @@
 	overflow: hidden;
 	padding-bottom: 10px;
 	border-bottom: solid 1px #e0e0e0;
+	position: relative;
 }
 
 #secondary,
@@ -109,13 +138,13 @@
 		width: 358px;
 	}
 	@include breakpoint(lg) {
-		width: 358px;
+		width: 300px;
 	}
 	@include breakpoint(md) {
-		width: 358px;
+		width: 300px;
 	}
 	@include breakpoint(sm) {
-		width: 358px;
+		width: 300px;
 	}
 	@include breakpoint(xs) {
 		width: 94%;
@@ -161,7 +190,7 @@ summary {
 		width: 1170px;
 	}
 	@include breakpoint(md) {
-		width: 1010px;
+		width: 1170px;
 	}
 	@include breakpoint(sm) {
 		width: 758px;
@@ -180,10 +209,10 @@ summary {
 		width: 810px;
 	}
 	@include breakpoint(lg) {
-		width: 690px;
+		width: 810px;
 	}
 	@include breakpoint(md) {
-		width: 690px;
+		width: 660px;
 	}
 	@include breakpoint(sm) {
 		width: 390px;
@@ -210,4 +239,69 @@ summary {
 
 .full-page {
 	background: #f6f6f6;
+}
+
+.category-main,
+#category-primary {
+	width: 840px;
+	margin-top: 10px;
+	//position: relative;
+}
+.category-primary-wrapper,
+.category-primary {
+	background: #fff;
+	z-index: 15;
+	overflow: hidden;
+	height: 100%;
+	float: left;
+	margin-left: 120px;
+	@include breakpoint(bg) {
+		width: 840px;
+	}
+	@include breakpoint(lg) {
+		width: 840px;
+	}
+	@include breakpoint(md) {
+		width: 690px;
+	}
+	@include breakpoint(sm) {
+		width: 758px;
+	}
+	@include breakpoint(xs) {
+		width: 100%;
+	}
+}
+.suspender-color {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 10px;
+	width: 120px;
+	background-color: #4d59a1;
+}
+
+.suspender-section-name {
+	color: inherit;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 14px;
+	margin: 0;
+	padding: 15px 10px 10px;
+	text-align: left;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.ssns-items {
+	border-bottom: 1px solid rgba(255, 255, 225, 0.14);
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	width: 120px;
 }

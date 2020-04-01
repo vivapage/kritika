@@ -27,17 +27,19 @@ gulp.task("browser-sync", function() {
 
 // Обьединяем файлы sass, сжимаем и переменовываем
 gulp.task("styles", function() {
-	return gulp
-		.src("./sass/**/*.scss")
-		.pipe(sass({ outputStyle: "expand" }).on("error", notify.onError()))
-		.pipe(rename({ suffix: ".min", prefix: "" }))
-		.pipe(concat("style.css"))
+	return (
+		gulp
+			.src("./sass/**/*.scss")
+			.pipe(sass({ outputStyle: "expand" }).on("error", notify.onError()))
+			.pipe(rename({ suffix: ".min", prefix: "" }))
+			.pipe(concat("style.css"))
 
-		.pipe(autoprefixer(["last 15 versions"]))
-		.pipe(cleancss({ level: { 1: { specialComments: 2 } } })) // Opt., comment out when debugging
-		.pipe(gulp.dest("./"))
+			.pipe(autoprefixer(["last 15 versions"]))
+			//.pipe(cleancss({ level: { 1: { specialComments: 2 } } })) // Opt., comment out when debugging
+			.pipe(gulp.dest("./"))
 
-		.pipe(browsersync.stream());
+			.pipe(browsersync.stream())
+	);
 });
 
 // Обьединяем файлы скриптов, сжимаем и переменовываем
