@@ -17,7 +17,6 @@ get_header('single');
 			<div class="util-bar-module">
 			<a class="fa fa-facebook util-bar-btn"  href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?php echo urlencode(get_permalink()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
 			<a class="fa fa-twitter util-bar-btn" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title()); ?>+<?php echo get_permalink(); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
-			<a class="fa fa-google-plus util-bar-btn" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
 			</div>
 		</div>
 	</div>

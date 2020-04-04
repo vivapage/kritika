@@ -1367,10 +1367,12 @@ span.cat-links a {
   position: relative;
   text-align: center; }
 
-a.fa.fa-facebook.inline-share-btn {
+a.fa.fa-facebook.inline-share-btn,
+a.fa.fa-facebook.util-bar-btn {
   color: #3b5998; }
 
-a.fa.fa-twitter.inline-share-btn {
+a.fa.fa-twitter.inline-share-btn,
+a.fa.fa-twitter.util-bar-btn {
   color: #55acee; }
 
 a.fa.fa-telegram.inline-share-btn {
@@ -1378,6 +1380,15 @@ a.fa.fa-telegram.inline-share-btn {
 
 a.fa.fa-linkedin.inline-share-btn {
   color: #007bb5; }
+
+a.fab.fa-viber.inline-share-btn {
+  color: #7360f2; }
+
+a.fa.fa-whatsapp.inline-share-btn {
+  color: #25d366; }
+
+a.fab.fa-facebook-messenger.inline-share-btn {
+  color: #0078ff; }
 
 .more-stories-wrap {
   width: 100%;
@@ -1407,12 +1418,11 @@ a.fa.fa-linkedin.inline-share-btn {
 .more-div {
   width: auto;
   _width: 99%;
-  height: 410px;
   border-width: 0;
   padding: 20px 0 0 0; }
 
 .morecube {
-  width: 46.995%;
+  width: 30%;
   position: relative;
   float: left;
   margin: 0 0 3% 0;
@@ -1461,7 +1471,7 @@ a.fa.fa-linkedin.inline-share-btn {
 .label-box {
   height: 120px !important;
   position: absolute;
-  top: 185px;
+  bottom: 0px;
   display: block;
   z-index: 100;
   overflow: visible;
@@ -1471,13 +1481,13 @@ a.fa.fa-linkedin.inline-share-btn {
 .label-title {
   text-decoration: none;
   margin: 0 12px 10px 12px;
-  height: 72px !important;
   z-index: 100;
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 18px;
   font-weight: normal;
   max-height: 72px;
   color: #fff;
+  text-shadow: 0 1px 1px #000;
   display: block;
   overflow: hidden; }
 

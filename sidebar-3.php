@@ -12,7 +12,7 @@
 
 <aside id="secondary" class="sidebar widget-area-category">
 	<div class="theiaStickySidebar">
-	<?php dynamic_sidebar( 'sidebar-3' ); ?>
+	
 	<h6 class="widget-title">Еще новости</h6>
 <div class="sidebar-scrollable-window-category">
 	<?php
@@ -77,5 +77,6 @@
 echo '</ul>';
 	?>
 	</div>
+	<?php dynamic_sidebar( 'sidebar-3' ); ?>
 </div>
 </aside><!-- #secondary -->

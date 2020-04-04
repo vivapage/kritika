@@ -73,12 +73,10 @@ if ($category){
 				<span class="toggle"></span>
 			</div>
 			<div class="inline-share-tools">
-			<a class="fa fa-facebook inline-share-btn" data-mobile_iframe="true" title="Share on facebook " href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?php echo urlencode(get_permalink()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
-				<a class="fa fa-telegram inline-share-btn" data-mobile_iframe="true" title="Share on telegram " href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title()); ?>+<?php echo get_permalink(); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
-				<a class="fa fa-twitter inline-share-btn" title="Share on twitter " href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title()); ?>+<?php echo get_permalink(); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
-				<a class="fa fa-linkedin inline-share-btn" title="Share on linkedin " href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
-				<a class="fab fa-viber inline-share-btn" data-mobile_iframe="true" title="Share on viber " href="viber://forward?text=<?php echo urlencode(get_the_title()); ?> <?php echo urlencode(get_permalink()); ?>"></a>
-				<a class="fa fa-whatsapp inline-share-btn" data-mobile_iframe="true" title="Share on whatsapp " href="whatsapp://send?text=<?php echo urlencode(get_the_title()); ?> <?php echo urlencode(get_permalink()); ?>"></a>
+				<a class="fa fa-facebook inline-share-btn"  href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?php echo urlencode(get_permalink()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
+				<a class="fa fa-twitter inline-share-btn" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title()); ?>+<?php echo get_permalink(); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
+				<a class="fa fa-telegram inline-share-btn" href="https://telegram.me/share/url?url=<?php echo urlencode(get_permalink()); ?>"  onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
+				<a class="fa fa-linkedin inline-share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" onclick="window.open(this.href, 'sharegplus', 'height=400,width=600'); return false;" target="_blank"></a>
 			</div>
 
 	<div class="entry-content">
@@ -117,22 +115,13 @@ if ($category){
 
 
 			<?php
-			$time = "&monthnum=".date("m")."&day=".date("j"); // За день
-			$curr_year = date('Y'); // текущий год
-			$curr_month = date('m'); 
-			$curr_week = date("W");
-			$curr_day = date("j"); // текущий месяц// текущий месяц
 
 				$args = array(
-                	'numberposts' => 3,
+                	'numberposts' => 4,
                 	'meta_key'    => 'post_views_count',
                 	'orderby'     => 'meta_value_num',
                 	'post_status' => 'publish',
-									'order'       => 'DESC',
-									'year'     => $curr_year,
-									'monthnum' => $curr_month,
-									'week' => $curr_week,
-
+                	'order'       => 'DESC'
                 );
 
 			$result = wp_get_recent_posts($args);
@@ -142,7 +131,6 @@ if ($category){
 				<div class="morecube">
 					<a href="<?php echo get_permalink($p['ID']) ?>">
 					<div class="thumbBlock_holder">
-					<span class="image-gradient"></span>
 						<span class="thumbBlock" style="background-image: url(&quot;<?php echo  get_the_post_thumbnail_url($p["ID"],'category-big'); ?>&quot;);"><span class="thumbnail-overlay"></span></span>
 						<div class="morecube_aspect"></div>
 					</div></a>
@@ -151,6 +139,8 @@ if ($category){
 							<span class="label-title">
 								<?php echo $p['post_title'] ?>
 							</span>
+
+							<span class="label-date"><?php echo date('Y-m-d H:i', strtotime($p['post_date']))?></span>
 						</span>
 					</a>
 				</div>
@@ -160,6 +150,10 @@ if ($category){
 				</div>
 			</div>
 		</div>
+
+
+
+
 
 	</div><!-- .entry-content -->
 

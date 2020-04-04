@@ -28,7 +28,7 @@ $category = get_category ($cat);
 
 
 					<?php
-						 echo do_shortcode('[ajax_load_more container_type="ul" css_classes="golovne-list" post_type="post" posts_per_page="27" category="'.$category->slug.'" offset="3" scroll="false" transition="none" transition_container="false" button_label="Показать еще" button_loading_label="Показать еще" cache_id="cache-'.$category->slug.'"]');
+						 echo do_shortcode('[ajax_load_more container_type="ul" css_classes="golovne-list" post_type="post" posts_per_page="27" category="'.$category->slug.'" scroll="false" transition="none" transition_container="false" button_label="Показать еще" button_loading_label="Показать еще" cache_id="cache-'.$category->slug.'"]');
 					 ?>
 				</div>
       </div>
